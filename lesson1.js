@@ -6,5 +6,13 @@ var DOMobj = function (arg) {
 }
 
 var $ = function (sel) {
-	return new DOMobj(document.getElementById(sel));
+	var key = document.getElementById(sel);
+
+	function addClass (className) {
+		key.classList.add(className);
+	}
+
+	return {
+		addClass: addClass
+	}
 }
